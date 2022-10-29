@@ -1,0 +1,24 @@
+.input {
+    margin: 1rem .75rem 1rem 0;
+    padding: .5rem 1rem;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+.addContainer {
+    display: flex;
+    flex-grow: 1;
+}
+
+.addButton {
+    margin: 1rem 0 1rem 1rem;
+    padding: .5rem 1rem;
+}
+
+.deleteButton {
+    margin: 1rem 0;
+    padding: .5rem 1rem;
+}
