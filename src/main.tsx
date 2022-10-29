@@ -8,6 +8,11 @@ import {ModuleRegistry} from "@ag-grid-community/core";
 import {SetFilterModule} from "@ag-grid-enterprise/set-filter";
 import {ClientSideRowModelModule} from "@ag-grid-community/client-side-row-model";
 
+/**
+ * Set-up Ag-Grid Modules,
+ * Reduces the bundle size a ton by using modules,
+ * instead of importing the whole ag-grid-react and ag-grid-community package
+ */
 ModuleRegistry.registerModules([
     SetFilterModule,
     ClientSideRowModelModule

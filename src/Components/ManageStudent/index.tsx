@@ -17,6 +17,9 @@ function ManageStudent({GridRef}: any) {
 
     const dispatch = useDispatch()
 
+    /**
+     * Add the user to the students slice if name is longer than 2 chars
+     */
     function SubmitStudent() {
 
         if (name.length < 2) {
@@ -30,6 +33,9 @@ function ManageStudent({GridRef}: any) {
         setClass("A")
     }
 
+    /**
+     * Remove selected rows and hide the delete button
+     */
     function SubmitDeleteSelected() {
         if (!GridRef.current) return alert("Grid failed to load.")
 
@@ -38,6 +44,9 @@ function ManageStudent({GridRef}: any) {
         dispatch(setDeleteButtonVisibility(false))
     }
 
+    /**
+     * Render the Action bar, and add a conditional for the delete button
+     */
     return (
         <div className={styles.container}>
             <div className={styles.addContainer}>

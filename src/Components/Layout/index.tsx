@@ -1,7 +1,9 @@
 import styles from "./Layout.module.css"
 import {PropsWithChildren} from "react";
 
-
+/**
+ * Simple layout
+ */
 function Layout(p: PropsWithChildren) {
 
     return (

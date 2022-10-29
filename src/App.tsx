@@ -14,6 +14,9 @@ function App() {
     const gridRef = useRef<AgGridReact>(null)
     const dispatch = useDispatch()
 
+    /**
+     * Set-up Column fields and filters.
+     */
     const [columnDefs] = useState<(ColDef | ColGroupDef)[]>([
         {
             headerName: "",
@@ -33,6 +36,9 @@ function App() {
         filter: true
     }), [])
 
+    /**
+     * Hide the delete button if not rows are selected
+     */
     function onSelectionChanged(e: SelectionChangedEvent) {
         const rows = e.api.getSelectedRows()
         dispatch(setDeleteButtonVisibility(rows.length > 0))
