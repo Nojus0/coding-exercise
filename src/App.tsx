@@ -1,4 +1,3 @@
-import styles from './App.module.css'
 import {useMemo, useRef, useState} from "react";
 import '@ag-grid-community/styles/ag-grid.css';
 import '@ag-grid-community/styles/ag-theme-alpine.css';
@@ -8,6 +7,7 @@ import ManageStudent from "@Components/ManageStudent";
 import {ColDef, ColGroupDef, SelectionChangedEvent} from "@ag-grid-community/core";
 import {useDispatch} from "react-redux";
 import {SetFilter} from "@ag-grid-enterprise/set-filter"
+import Layout from "@Components/Layout";
 
 function App() {
     const studentSlice = useStudentsSlice()
@@ -39,26 +39,21 @@ function App() {
     }
 
     return (
-        <div className={styles.app}>
-
-            <div className={styles.gridContainer}>
-                <ManageStudent GridRef={gridRef}/>
-
-                <div className="ag-theme-alpine" style={{height: 400, width: "100%"}}>
-                    <AgGridReact
-                        ref={gridRef}
-                        onSelectionChanged={onSelectionChanged}
-                        animateRows={true}
-                        rowSelection="multiple"
-                        rowData={studentSlice.students}
-                        columnDefs={columnDefs}
-                        defaultColDef={defaultColDefs}
-                    >
-                    </AgGridReact>
-                </div>
-
+        <Layout>
+            <ManageStudent GridRef={gridRef}/>
+            <div className="ag-theme-alpine" style={{height: 400, width: "100%"}}>
+                <AgGridReact
+                    ref={gridRef}
+                    onSelectionChanged={onSelectionChanged}
+                    animateRows={true}
+                    rowSelection="multiple"
+                    rowData={studentSlice.students}
+                    columnDefs={columnDefs}
+                    defaultColDef={defaultColDefs}
+                >
+                </AgGridReact>
             </div>
-        </div>
+        </Layout>
     )
 }
 
