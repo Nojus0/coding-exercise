@@ -20,7 +20,7 @@ function ManageStudent({GridRef}: any) {
     function SubmitStudent() {
 
         if (name.length < 2) {
-            return alert("Please a name that is longer than 2 characters")
+            return alert("Please enter a name that is longer than 2 characters")
         }
 
         dispatch(addStudent({Name: name, Score: score, Class: studentClass}))
