@@ -1,12 +1,20 @@
 import styles from "./AddStudent.module.css"
 import {useState} from "react";
 import {useDispatch} from "react-redux";
-import {addStudent, removeStudentListByNames, StudentClass} from "../../Redux/Slices/StudentsSlice";
+import {
+    addStudent,
+    removeStudentListByNames,
+    setDeleteButtonVisibility,
+    StudentClass,
+    useStudentsSlice
+} from "../../Redux/Slices/StudentsSlice";
 
 function ManageStudent({GridRef}: any) {
     const [name, setName] = useState("")
     const [score, setScore] = useState(0)
-    const [mClass, setClass] = useState<StudentClass>("A")
+    const [studentClass, setClass] = useState<StudentClass>("A")
+    const studentsSlice = useStudentsSlice()
+
     const dispatch = useDispatch()
 
     function SubmitStudent() {
@@ -15,8 +23,7 @@ function ManageStudent({GridRef}: any) {
             return alert("Please a name that is longer than 2 characters")
         }
 
-        dispatch(addStudent({Name: name, Score: score, Class: mClass}))
-
+        dispatch(addStudent({Name: name, Score: score, Class: studentClass}))
 
         setName("")
         setScore(0)
@@ -28,6 +35,7 @@ function ManageStudent({GridRef}: any) {
 
         const selectedRows = GridRef.current.api.getSelectedRows()
         dispatch(removeStudentListByNames(selectedRows))
+        dispatch(setDeleteButtonVisibility(false))
     }
 
     return (
@@ -52,8 +60,10 @@ function ManageStudent({GridRef}: any) {
 
                 <button className={styles.addButton} onClick={SubmitStudent}>Add</button>
             </div>
-
-            <button className={styles.deleteButton} onClick={SubmitDeleteSelected}>Delete Selected</button>
+            {
+                studentsSlice.showDeleteButton &&
+                <button className={styles.deleteButton} onClick={SubmitDeleteSelected}>Delete Selected</button>
+            }
         </div>
     )
 }

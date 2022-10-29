@@ -1,15 +1,13 @@
-.App {
+.app {
     display: flex;
     flex-direction: column;
     align-items: center;
+    flex-wrap: wrap;
     justify-content: center;
     width: 100%;
 }
 
 
-.grid-container {
+.gridContainer {
     width: clamp(20rem, 100%, 50rem);
-}
-
-.app-wrapper {
 }

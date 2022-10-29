@@ -13,6 +13,7 @@ export interface Student {
 
 export interface StudentsSlice {
     students: Student[]
+    showDeleteButton: boolean
 }
 
 const initialState: StudentsSlice = {
@@ -20,7 +21,8 @@ const initialState: StudentsSlice = {
         {Name: "Alan", Score: 70, Class: "A"},
         {Name: "Ben", Score: 90, Class: "B"},
         {Name: "Cath", Score: 80, Class: "C"}
-    ]
+    ],
+    showDeleteButton: false
 }
 
 export const StudentsSlice = createSlice({
@@ -30,18 +32,18 @@ export const StudentsSlice = createSlice({
             addStudent(state, action: PayloadAction<Student>) {
                 state.students.push(action.payload)
             },
-            removeStudentByName(state, action: PayloadAction<string>) {
-                state.students = state.students.filter(student => student.Name !== action.payload)
-            },
             removeStudentListByNames(state, action: PayloadAction<Student[]>) {
                 state.students = state.students.filter(student =>
                     !action.payload.some((delStudent) => delStudent.Name == student.Name)
                 )
+            },
+            setDeleteButtonVisibility(state, action: PayloadAction<boolean>) {
+                state.showDeleteButton = action.payload
             }
         }
     }
 )
-export const {addStudent, removeStudentByName, removeStudentListByNames} = StudentsSlice.actions
+export const {addStudent, removeStudentListByNames, setDeleteButtonVisibility} = StudentsSlice.actions
 
 export function useStudentsSlice() {
     return useSelector((state: RootState) => state.StudentsSlice)
