@@ -7,7 +7,7 @@ import {
     setDeleteButtonVisibility,
     StudentClass,
     useStudentsSlice
-} from "../../Redux/Slices/StudentsSlice";
+} from "@Redux/Slices/StudentsSlice";
 
 function ManageStudent({GridRef}: any) {
     const [name, setName] = useState("")

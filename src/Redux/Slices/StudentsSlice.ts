@@ -1,6 +1,6 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 import {useSelector} from "react-redux";
-import {RootState} from "../Store";
+import {RootState} from "@Redux/Store";
 
 export type StudentClass = "A" | "B" | "C" | "D" | "E" | "F"
 

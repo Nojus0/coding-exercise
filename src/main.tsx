@@ -4,7 +4,6 @@ import App from './App'
 import './index.css'
 import {Provider} from "react-redux";
 import {store} from "./Redux/Store";
-
 import {ModuleRegistry} from "@ag-grid-community/core";
 import {SetFilterModule} from "@ag-grid-enterprise/set-filter";
 import {ClientSideRowModelModule} from "@ag-grid-community/client-side-row-model";

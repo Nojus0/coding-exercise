@@ -1,11 +1,10 @@
 import styles from './App.module.css'
-// import {AgGridReact} from "ag-grid-react";
 import {useMemo, useRef, useState} from "react";
 import '@ag-grid-community/styles/ag-grid.css';
-import {AgGridReact} from "@ag-grid-community/react"
 import '@ag-grid-community/styles/ag-theme-alpine.css';
-import {setDeleteButtonVisibility, useStudentsSlice} from "./Redux/Slices/StudentsSlice";
-import ManageStudent from "./Components/ManageStudent";
+import {AgGridReact} from "@ag-grid-community/react"
+import {setDeleteButtonVisibility, useStudentsSlice} from "@Redux/Slices/StudentsSlice";
+import ManageStudent from "@Components/ManageStudent";
 import {ColDef, ColGroupDef, SelectionChangedEvent} from "@ag-grid-community/core";
 import {useDispatch} from "react-redux";
 import {SetFilter} from "@ag-grid-enterprise/set-filter"
@@ -26,11 +25,7 @@ function App() {
         },
         {field: "Name", filter: "agTextColumnFilter", menuTabs: ["filterMenuTab"]},
         {field: 'Score', filter: 'agNumberColumnFilter', menuTabs: ["filterMenuTab"]},
-        {
-            field: 'Class',
-            filter: SetFilter,
-            menuTabs: ["filterMenuTab"]
-        }
+        {field: 'Class', filter: SetFilter, menuTabs: ["filterMenuTab"]}
     ])
 
     const defaultColDefs = useMemo(() => ({
