@@ -26,3 +26,9 @@ Retrieves the student array from the Students Slice, to display them on a grid.
 # Action Bar / Top Bar
 Consists of a Name, Score textbox, Class dropdown and a Add Button.
 After pressing the Add button the values from the `Name`, `Score` and `Class` input's get converted into a _Student_ object, and get pushed onto the students array.
+
+# Why Redux for Such a Small Project
+React Context would have been sufficient for this kind of project, but I decided to use Redux to show that I know how to use Redux.
+
+# Why AG-Grid
+Easy to use, built in filtering, sorting and virtualization.
