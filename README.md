@@ -10,9 +10,9 @@ https://coding-exercise-nojus.netlify.app
 6. Bundler - Vite
 
 # Redux Slices
-StudentsSlice Holds a list of students, and a boolean for deciding if to show the delete button.
+Students Slice Holds a list of students, and a boolean for deciding if to show the delete button.
 
-StundentsSlice Actions `addStudent`, `removeStudentListByNames` and `removeStudentListByNames`
+Students Slice Actions `addStudent`, `removeStudentListByNames` and `removeStudentListByNames`
 
 # AG-Grid
 Creates a Grid with `Name`, `Score`,`Class` fields and applies their appropriate filters (Text Filter, Number Filter, Set Filter).
