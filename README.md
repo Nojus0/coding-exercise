@@ -21,7 +21,7 @@ Students Slice Actions `addStudent`, `removeStudentsByNames` and `setDeleteButto
 # AG-Grid
 Creates a Grid with `Name`, `Score`,`Class` fields and applies their appropriate filters (Text Filter, Number Filter, Set Filter).
 
-Retrieves the student array from the Students Slice, to display them on a grid.
+Retrieves the students array from the Students Slice, to display them on a grid.
 
 # Action Bar / Top Bar
 Consists of a Name, Score textbox, Class dropdown and a Add Button.
