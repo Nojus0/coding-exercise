@@ -12,7 +12,7 @@ https://coding-exercise-nojus.netlify.app
 # Redux Slices
 Students Slice Holds a list of students, and a boolean for deciding if to show the delete button.
 
-Students Slice Actions `addStudent`, `removeStudentListByNames` and `removeStudentListByNames`
+Students Slice Actions `addStudent`, `removeStudentsByName` and `setDeleteButtonVisibility`
 
 # AG-Grid
 Creates a Grid with `Name`, `Score`,`Class` fields and applies their appropriate filters (Text Filter, Number Filter, Set Filter).
