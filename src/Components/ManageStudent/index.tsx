@@ -64,6 +64,7 @@ function ManageStudent({gridRef}: IManageStudent) {
                        type="number"/>
 
                 <select role="classSelector" className={styles.input}
+                        value={studentClass}
                         onChange={(e) => setClass(e.currentTarget.value as StudentClass)}>
                     {
                         StudentClasses.map((studentClass) => (
