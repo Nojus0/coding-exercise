@@ -7,8 +7,8 @@ import {PropsWithChildren} from "react";
 function Layout(p: PropsWithChildren) {
 
     return (
-        <div className={styles.app}>
-            <div className={styles.gridContainer}>
+        <div className={styles.layout}>
+            <div className={styles.clampedCenter}>
                 {p.children}
             </div>
         </div>
