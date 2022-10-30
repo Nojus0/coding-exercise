@@ -1,4 +1,6 @@
 # Coding Exercise
+[![Open in Codeflow](https://developer.stackblitz.com/img/open_in_codeflow.svg)](https:///pr.new/Nojus0/coding-exercise)
+
 https://coding-exercise-nojus.netlify.app
 
 # The Stack
