@@ -18,3 +18,7 @@ Students Slice Actions `addStudent`, `removeStudentListByNames` and `removeStude
 Creates a Grid with `Name`, `Score`,`Class` fields and applies their appropriate filters (Text Filter, Number Filter, Set Filter).
 
 Retrieves the student array from the Students Slice, to display them on a grid.
+
+# Action Bar / Top Bar
+Consists of a Name, Score textbox, Class dropdown and a Add Button.
+After pressing Add the values from the name, score and score input's get converted into a student object, and get pushed to the Students Slice student array.
