@@ -2,17 +2,17 @@ import {useMemo, useRef, useState} from "react";
 import '@ag-grid-community/styles/ag-grid.css';
 import '@ag-grid-community/styles/ag-theme-alpine.css';
 import {AgGridReact} from "@ag-grid-community/react"
-import {setDeleteButtonVisibility, useStudentsSlice} from "@Redux/Slices/StudentsSlice";
+import {setDeleteButtonVisibility, } from "@Redux/Slices/StudentsSlice";
 import ManageStudent from "@Components/ManageStudent";
 import {ColDef, ColGroupDef, SelectionChangedEvent} from "@ag-grid-community/core";
-import {useDispatch} from "react-redux";
 import {SetFilter} from "@ag-grid-enterprise/set-filter"
 import Layout from "@Components/Layout";
+import {useAppDispatch, useAppSelector} from "@Redux/Hooks";
 
 function App() {
-    const studentSlice = useStudentsSlice()
+    const studentSlice = useAppSelector((root) => root.StudentsSlice)
     const gridRef = useRef<AgGridReact>(null)
-    const dispatch = useDispatch()
+    const dispatch = useAppDispatch()
 
     /**
      * Set-up Column fields and filters.

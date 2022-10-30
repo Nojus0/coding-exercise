@@ -1,8 +1,8 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
-import {useSelector} from "react-redux";
-import {RootState} from "@Redux/Store";
+import {useAppSelector} from "@Redux/Hooks";
 
 export type StudentClass = "A" | "B" | "C" | "D" | "E" | "F"
+export const StudentClasses: StudentClass[] = ["A", "B", "C", "D", "E", "F"]
 
 export interface Student {
     Name: string
@@ -64,8 +64,6 @@ export const {addStudent, removeStudentListByNames, setDeleteButtonVisibility} =
 /**
  * Wrapper for selecting the Student Slice
  */
-export function useStudentsSlice() {
-    return useSelector((state: RootState) => state.StudentsSlice)
-}
+export const useStudentSlice = () => useAppSelector((root) => root.StudentsSlice)
 
 export default StudentsSlice.reducer
