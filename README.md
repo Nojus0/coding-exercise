@@ -21,4 +21,4 @@ Retrieves the student array from the Students Slice, to display them on a grid.
 
 # Action Bar / Top Bar
 Consists of a Name, Score textbox, Class dropdown and a Add Button.
-After pressing Add the values from the name, score and score input's get converted into a student object, and get pushed to the Students Slice student array.
+After pressing the Add button the values from the `Name`, `Score` and `Class` input's get converted into a _Student_ object, and get pushed onto the students array.
