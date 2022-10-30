@@ -3,6 +3,8 @@
 
 https://coding-exercise-nojus.netlify.app
 
+![Home Page](https://raw.githubusercontent.com/Nojus0/coding-exercise/main/images/homepage.png)
+
 # The Stack
 1. Framework - React
 2. State Management Library - Redux
