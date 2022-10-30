@@ -1,10 +1,9 @@
 import {useState} from "react";
 import {
-    addStudent,
-    removeStudentListByNames,
+    addStudent, removeStudentsByName,
     setDeleteButtonVisibility,
     StudentClass,
-    StudentClasses
+    StudentClasses, useStudentsSlice
 } from "@Redux/Slices/StudentsSlice";
 import styles from "./ManageStudent.module.css"
 import {AgGridReact} from "@ag-grid-community/react";
@@ -19,7 +18,7 @@ function ManageStudent({gridRef}: IManageStudent) {
     const [name, setName] = useState("")
     const [score, setScore] = useState(0)
     const [studentClass, setClass] = useState<StudentClass>("A")
-    const studentsSlice = useAppSelector((root) => root.StudentsSlice)
+    const studentsSlice = useStudentsSlice()
 
     const dispatch = useAppDispatch()
 
@@ -46,7 +45,7 @@ function ManageStudent({gridRef}: IManageStudent) {
         if (!gridRef.current) return alert("Grid failed to load.")
 
         const selectedRows = gridRef.current.api.getSelectedRows()
-        dispatch(removeStudentListByNames(selectedRows))
+        dispatch(removeStudentsByName(selectedRows))
         dispatch(setDeleteButtonVisibility(false))
     }
 

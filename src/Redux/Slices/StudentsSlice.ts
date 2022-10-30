@@ -40,7 +40,7 @@ export const StudentsSlice = createSlice({
             addStudent(state, action: PayloadAction<Student>) {
                 state.students.push(action.payload)
             },
-            removeStudentListByNames(state, action: PayloadAction<Student[]>) {
+            removeStudentsByName(state, action: PayloadAction<Student[]>) {
                 /**
                  * Remove students by their name, checks if the current student that is being
                  * filtered over belongs in the list of students to remove, if belongs remove the student.
@@ -59,11 +59,11 @@ export const StudentsSlice = createSlice({
 /**
  * Export all actions
  */
-export const {addStudent, removeStudentListByNames, setDeleteButtonVisibility} = StudentsSlice.actions
+export const {addStudent, removeStudentsByName, setDeleteButtonVisibility} = StudentsSlice.actions
 
 /**
  * Wrapper for selecting the Student Slice
  */
-export const useStudentSlice = () => useAppSelector((root) => root.StudentsSlice)
+export const useStudentsSlice = () => useAppSelector((root) => root.StudentsSlice)
 
 export default StudentsSlice.reducer
