@@ -1,6 +1,6 @@
 import {useState} from "react";
 import {
-    addStudent, removeStudentsByName,
+    addStudent, removeStudentsByNames,
     setDeleteButtonVisibility,
     StudentClass,
     StudentClasses, useStudentsSlice
@@ -45,7 +45,7 @@ function ManageStudent({gridRef}: IManageStudent) {
         if (!gridRef.current) return alert("Grid failed to load.")
 
         const selectedRows = gridRef.current.api.getSelectedRows()
-        dispatch(removeStudentsByName(selectedRows))
+        dispatch(removeStudentsByNames(selectedRows))
         dispatch(setDeleteButtonVisibility(false))
     }
 
