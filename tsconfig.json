@@ -2,9 +2,14 @@
   "compilerOptions": {
     "target": "ESNext",
     "useDefineForClassFields": true,
-    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ESNext"
+    ],
+    "types": ["vite/client"],
     "allowJs": false,
-    "skipLibCheck": true,
+    "skipLibCheck": false,
     "esModuleInterop": false,
     "allowSyntheticDefaultImports": true,
     "strict": true,
@@ -17,10 +22,18 @@
     "jsx": "react-jsx",
     "baseUrl": "./src",
     "paths": {
-      "@Redux/*": ["./Redux/*"],
-      "@Components/*": ["./Components/*"]
+      "@Redux/*": [
+        "./Redux/*"
+      ],
+      "@Components/*": [
+        "./Components/*"
+      ],
+      "@Test/*": [
+        "./Test/*"
+      ]
     }
   },
-  "include": ["src"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "include": [
+    "src"
+  ]
 }

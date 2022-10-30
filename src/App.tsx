@@ -46,7 +46,7 @@ function App() {
 
     return (
         <Layout>
-            <ManageStudent GridRef={gridRef}/>
+            <ManageStudent gridRef={gridRef}/>
             <div className="ag-theme-alpine" style={{height: 400, width: "100%"}}>
                 <AgGridReact
                     ref={gridRef}

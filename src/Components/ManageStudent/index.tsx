@@ -1,4 +1,3 @@
-import styles from "./AddStudent.module.css"
 import {useState} from "react";
 import {useDispatch} from "react-redux";
 import {
@@ -8,8 +7,14 @@ import {
     StudentClass,
     useStudentsSlice
 } from "@Redux/Slices/StudentsSlice";
+import styles from "./ManageStudent.module.css"
+import {AgGridReact} from "@ag-grid-community/react";
 
-function ManageStudent({GridRef}: any) {
+interface IManageStudent {
+    gridRef: React.RefObject<AgGridReact<any>>
+}
+
+function ManageStudent({gridRef}: IManageStudent) {
     const [name, setName] = useState("")
     const [score, setScore] = useState(0)
     const [studentClass, setClass] = useState<StudentClass>("A")
@@ -37,9 +42,9 @@ function ManageStudent({GridRef}: any) {
      * Remove selected rows and hide the delete button
      */
     function SubmitDeleteSelected() {
-        if (!GridRef.current) return alert("Grid failed to load.")
+        if (!gridRef.current) return alert("Grid failed to load.")
 
-        const selectedRows = GridRef.current.api.getSelectedRows()
+        const selectedRows = gridRef.current.api.getSelectedRows()
         dispatch(removeStudentListByNames(selectedRows))
         dispatch(setDeleteButtonVisibility(false))
     }
