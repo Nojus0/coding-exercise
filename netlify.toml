@@ -1,0 +1,24 @@
+[[headers]]
+  for = "*.ttf"
+  [headers.values]
+  Cache-Control = "public, max-age=365000000, immutable"
+
+[[headers]]
+  for = "*.svg"
+  [headers.values]
+  Cache-Control = "public, max-age=604800, immutable"
+
+[[headers]]
+  for = "*.js"
+  [headers.values]
+  Cache-Control = "public, max-age=604800, immutable"
+
+[[headers]]
+  for = "*.css"
+  [headers.values]
+  Cache-Control = "public, max-age=604800, immutable"
+
+[[redirects]]
+from = "/*"
+to = "/index.html"
+status = 200
